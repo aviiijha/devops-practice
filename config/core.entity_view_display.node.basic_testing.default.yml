@@ -1,0 +1,29 @@
+uuid: eba08dca-cbdd-4094-8789-5a640be03779
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.basic_testing.field_title
+    - node.type.basic_testing
+  module:
+    - user
+id: node.basic_testing.default
+targetEntityType: node
+bundle: basic_testing
+mode: default
+content:
+  field_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }
