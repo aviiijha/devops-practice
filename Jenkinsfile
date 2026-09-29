@@ -72,20 +72,6 @@ pipeline {
                 '''
             }
         }
-
-        stage('Deploy to Test') {
-            steps {
-                input message: 'Deploy to Pantheon TEST?'
-                sh 'terminus env:deploy "$SITE.test" --updatedb --cc --note="Jenkins build #$BUILD_NUMBER"'
-            }
-        }
-
-        stage('Deploy to Live') {
-            steps {
-                input message: 'Deploy to Pantheon LIVE?'
-                sh 'terminus env:deploy "$SITE.live" --updatedb --cc --note="Jenkins build #$BUILD_NUMBER"'
-            }
-        }
     }
 
     post {
