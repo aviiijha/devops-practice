@@ -67,7 +67,13 @@ pipeline {
                         [ "$STATUS" = "failed" ] && { echo "Pantheon workflow failed"; exit 1; }
                         sleep 10
                     done
+                    # Standard Drupal deploy order: database updates -> config import -> cache rebuild
                     terminus drush "$SITE.dev" -- updatedb -y
+                    if ls config/*.yml >/dev/null 2>&1; then
+                        terminus drush "$SITE.dev" -- config:import -y
+                    else
+                        echo "No exported config in config/ yet, skipping config:import"
+                    fi
                     terminus drush "$SITE.dev" -- cache:rebuild
                 '''
             }
