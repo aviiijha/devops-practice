@@ -51,11 +51,22 @@ pipeline {
         }
 
         stage('Post-deploy on Dev') {
+            options {
+                timeout(time: 15, unit: 'MINUTES')
+            }
             steps {
                 sh '''
                     terminus auth:login --machine-token="$TERMINUS_TOKEN"
-                    # Wait for Pantheon's Integrated Composer build + code sync to finish
-                    terminus workflow:wait --max=600 "$SITE.dev"
+                    # Wait for Pantheon's Integrated Composer build + code sync to finish.
+                    # (terminus workflow:wait can hang after the workflow finishes, so poll instead.)
+                    sleep 15
+                    for i in $(seq 1 60); do
+                        STATUS=$(terminus workflow:info:status "$SITE" --field=status 2>/dev/null)
+                        echo "Latest Pantheon workflow: $STATUS"
+                        [ "$STATUS" = "succeeded" ] && break
+                        [ "$STATUS" = "failed" ] && { echo "Pantheon workflow failed"; exit 1; }
+                        sleep 10
+                    done
                     terminus drush "$SITE.dev" -- updatedb -y
                     terminus drush "$SITE.dev" -- cache:rebuild
                 '''
