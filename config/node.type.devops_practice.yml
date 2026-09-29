@@ -1,4 +1,4 @@
-uuid: e0707a81-f8ab-4ee1-8317-c8d9973d1b54
+uuid: d6789fad-367c-465f-84ec-1552af9bb2b4
 langcode: en
 status: true
 dependencies:
@@ -9,8 +9,8 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-name: 'basic testing'
-type: basic_testing
+name: devops-practice
+type: devops_practice
 description: null
 help: null
 new_revision: true

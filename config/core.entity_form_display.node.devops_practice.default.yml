@@ -1,15 +1,15 @@
-uuid: 0fc900ae-23a5-4c03-bf73-55ec8c0825fc
+uuid: cc68c12e-4afd-4950-9a81-7f53a03cbb2f
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.basic_testing.field_title
-    - node.type.basic_testing
+    - field.field.node.devops_practice.field_title
+    - node.type.devops_practice
   module:
     - path
-id: node.basic_testing.default
+id: node.devops_practice.default
 targetEntityType: node
-bundle: basic_testing
+bundle: devops_practice
 mode: default
 content:
   created:

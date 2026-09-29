@@ -1,14 +1,14 @@
-uuid: 9d5702fc-3ab5-4bcc-945c-b3694a6ed246
+uuid: ffbf90db-43e0-4194-92a6-d9ae8ad4c62c
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_title
-    - node.type.basic_testing
-id: node.basic_testing.field_title
+    - node.type.devops_practice
+id: node.devops_practice.field_title
 field_name: field_title
 entity_type: node
-bundle: basic_testing
+bundle: devops_practice
 label: 'Title '
 description: ''
 required: false
