@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.devops_practice.field_gvgrbrbrgb
     - field.field.node.devops_practice.field_title
     - node.type.devops_practice
   module:
@@ -17,6 +18,14 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_gvgrbrbrgb:
+    type: string_textfield
+    weight: 122
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_title:
     type: string_textfield

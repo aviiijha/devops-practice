@@ -1,0 +1,19 @@
+uuid: fa12da13-820f-4875-aef9-ae40090caa0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gvgrbrbrgb
+    - node.type.devops_practice
+id: node.devops_practice.field_gvgrbrbrgb
+field_name: field_gvgrbrbrgb
+entity_type: node
+bundle: devops_practice
+label: gvgrbrbrgb
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

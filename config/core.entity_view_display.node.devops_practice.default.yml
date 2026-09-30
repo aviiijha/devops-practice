@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.devops_practice.field_gvgrbrbrgb
     - field.field.node.devops_practice.field_title
     - node.type.devops_practice
   module:
@@ -12,6 +13,15 @@ targetEntityType: node
 bundle: devops_practice
 mode: default
 content:
+  field_gvgrbrbrgb:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 102
+    region: content
   field_title:
     type: string
     label: above

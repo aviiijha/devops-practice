@@ -1,0 +1,21 @@
+uuid: 5a5d6522-78c9-4fa0-b193-72a3d97ba08b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_gvgrbrbrgb
+field_name: field_gvgrbrbrgb
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
